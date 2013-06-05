@@ -449,7 +449,7 @@ CFLAGS="$compileroptions $cxx_debug_options $EXTRA_CFLAGS $debugflag "
 export CFLAGS
 LDFLAGS="$linkeroptions -shared $ld_debug_options $ld_libs $EXTRA_LDFLAGS "
 export LDFLAGS
-
+#-shared
 mkdir -p $OBJ_PATH/debug
 
 $MAKE -f Makefile \
