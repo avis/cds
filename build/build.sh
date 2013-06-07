@@ -485,46 +485,46 @@ if test $? -gt 0; then
 fi
 
 
-echo ---------------------------------
-echo Make tests
+#echo ---------------------------------
+#echo Make tests
+#
+#if test $MAKE_DEBUG_TEST = '0'; then
+#    CXXFLAGS="$compileroptions $cxx_release_options $cxx_test_release_options $EXTRA_CXXFLAGS "
+#    export CXXFLAGS
+#    CFLAGS="$compileroptions $cxx_release_options $EXTRA_CFLAGS "
+#    export CFLAGS
+#    LDFLAGS="$linkeroptions $ld_release_options $ld_test_release_options $ld_libs $EXTRA_TEST_LDFLAGS "
+#    export LDFLAGS
+#
+#    $MAKE -f Makefile -j $makejobs \
+#        platform=$OS_FAMILY \
+#        BIN_PATH=$BIN_PATH \
+#        OBJ_PATH=$OBJ_PATH/test \
+#        test
+#        
+#    if test $? -gt 0; then
+#        exit $?
+#    fi
+#fi    
 
-if test $MAKE_DEBUG_TEST = '0'; then
-    CXXFLAGS="$compileroptions $cxx_release_options $cxx_test_release_options $EXTRA_CXXFLAGS "
-    export CXXFLAGS
-    CFLAGS="$compileroptions $cxx_release_options $EXTRA_CFLAGS "
-    export CFLAGS
-    LDFLAGS="$linkeroptions $ld_release_options $ld_test_release_options $ld_libs $EXTRA_TEST_LDFLAGS "
-    export LDFLAGS
-
-    $MAKE -f Makefile -j $makejobs \
-        platform=$OS_FAMILY \
-        BIN_PATH=$BIN_PATH \
-        OBJ_PATH=$OBJ_PATH/test \
-        test
-        
-    if test $? -gt 0; then
-        exit $?
-    fi
-fi    
-
-echo ---------------------------------
-echo Make tests debug
-
-if test $MAKE_DEBUG_TEST = '1'; then
-    CXXFLAGS="$compileroptions $cxx_debug_options $cxx_test_release_options $EXTRA_CXXFLAGS "
-    export CXXFLAGS
-    CFLAGS="$compileroptions $cxx_debug_options $EXTRA_CFLAGS "
-    export CFLAGS
-    LDFLAGS="$linkeroptions $ld_debug_options $ld_test_release_options $ld_libs $EXTRA_TEST_LDFLAGS "
-    export LDFLAGS
-
-    $MAKE -f Makefile -j $makejobs \
-        platform=$OS_FAMILY \
-        BIN_PATH=$BIN_PATH \
-        OBJ_PATH=$OBJ_PATH/test-debug \
-        test_debug
-        
-    if test $? -gt 0; then
-        exit $?
-    fi
-fi    
+#echo ---------------------------------
+#echo Make tests debug
+#
+#if test $MAKE_DEBUG_TEST = '1'; then
+#    CXXFLAGS="$compileroptions $cxx_debug_options $cxx_test_release_options $EXTRA_CXXFLAGS "
+#    export CXXFLAGS
+#    CFLAGS="$compileroptions $cxx_debug_options $EXTRA_CFLAGS "
+#    export CFLAGS
+#    LDFLAGS="$linkeroptions $ld_debug_options $ld_test_release_options $ld_libs $EXTRA_TEST_LDFLAGS "
+#    export LDFLAGS
+#
+#    $MAKE -f Makefile -j $makejobs \
+#        platform=$OS_FAMILY \
+#        BIN_PATH=$BIN_PATH \
+#        OBJ_PATH=$OBJ_PATH/test-debug \
+#        test_debug
+#        
+#    if test $? -gt 0; then
+#        exit $?
+#    fi
+#fi    
